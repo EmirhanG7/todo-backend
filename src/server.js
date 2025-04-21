@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3001;
 
 
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://todo-frontend.vercel.app'],
+  origin: ['http://localhost:5173', 'https://todo-frontend-blond.vercel.app'],
   credentials: true
 }));
 
