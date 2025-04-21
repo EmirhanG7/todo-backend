@@ -2,7 +2,6 @@ import { db } from '../config/db.js';
 import { todos } from '../models/schema.js';
 import { eq, and } from 'drizzle-orm';
 
-// GET /api/todos → Kullanıcının tüm todoları
 export const getTodos = async (req, res) => {
   try {
     const result = await db
@@ -15,7 +14,6 @@ export const getTodos = async (req, res) => {
   }
 };
 
-// POST /api/todos → Yeni todo ekle
 export const addTodo = async (req, res) => {
   const { title } = req.body;
   try {
@@ -29,7 +27,6 @@ export const addTodo = async (req, res) => {
   }
 };
 
-// PATCH /api/todos/:id → Tamamlandı toggle
 export const toggleTodo = async (req, res) => {
   const id = parseInt(req.params.id);
   const { title } = req.body;
@@ -58,7 +55,6 @@ export const toggleTodo = async (req, res) => {
 };
 
 
-// DELETE /api/todos/:id → Todo sil
 export const deleteTodo = async (req, res) => {
   const id = parseInt(req.params.id);
   try {

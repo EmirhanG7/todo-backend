@@ -10,7 +10,7 @@ import { verifyToken } from '../middleware/authMiddleware.js';
 
 const router = express.Router();
 
-router.use(verifyToken); // tüm işlemler auth'lu
+router.use(verifyToken);
 
 router.get('/', getTodos);
 router.post('/', addTodo);
