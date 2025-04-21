@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3001;
 
 
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://todo-frontend-blond.vercel.app'],
+  origin: true,
   credentials: true
 }));
 
@@ -18,6 +18,11 @@ app.use(express.json());
 // app.use(cors());
 app.use('/api/auth', authRoutes);
 app.use('/api/todos', todoRoutes);
+
+// app.options('*', cors({
+//   origin: true,
+//   credentials: true
+// }));
 
 
 app.get('/', (req, res) => res.send('API Çalışıyor'));
